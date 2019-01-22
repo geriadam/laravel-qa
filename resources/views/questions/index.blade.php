@@ -26,15 +26,22 @@
                                     <strong>{{ $question->answers }}</strong> {{ str_plural('answer', $question->answers) }}
                                 </div>
                                 <div class="view">
-                                    <strong>{{ $question->views. " ".str_plural('view', $question->views) }}
+                                    <strong>{{ $question->views. " ".str_plural('view', $question->views) }}</strong>
                                 </div>
                             </div>
                             <div class="media-body">
-                                <h3 class="mt-0">
-                                    <a href="{{ $question->url }}">
-                                        {{ $question->title }}
-                                    </a>
-                                </h3>
+                                <div class="d-flex align-items-center">
+                                    <h3 class="mt-0">
+                                        <a href="{{ $question->url }}">
+                                            {{ $question->title }}
+                                        </a>
+                                    </h3>
+                                    <div class="ml-auto">
+                                        <a href="{{ route('questions.edit', $question->id) }}" class="btn btn-sm btn-outline-info">
+                                            Edit
+                                        </a>
+                                    </div>
+                                </div>
                                 <p>
                                     Asked by
                                     <a href="{{ $question->user->url }}">{{ $question->user->name }}</a>
