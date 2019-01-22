@@ -20,7 +20,7 @@
         name="body" 
         id="question-body" 
         class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" 
-        row="10">
+        rows="10">
         {{ old('body', $question->body) }}      
     </textarea>
     @if($errors->has('body'))
